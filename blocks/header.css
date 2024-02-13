@@ -6,3 +6,14 @@
   width: 173px;
   height: 33px;
 }
+
+@media screen and (max-width: 480px) {
+  .header {
+    max-width: 282px;
+  }
+
+  .header__logo {
+    width: 126px;
+    height: 24px;
+  }
+}

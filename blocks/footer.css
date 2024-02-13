@@ -8,3 +8,13 @@
   font-size: 18px;
   line-height: 1.2;
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    width: 282px;
+    height: 14px;
+    display: flex;
+    align-self: center;
+    padding: 48px 0 36px 0;
+  }
+}
