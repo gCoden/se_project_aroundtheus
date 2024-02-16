@@ -1,5 +1,6 @@
 .header {
   margin-top: 45px;
+  height: 74px;
 }
 
 .header__logo {
@@ -7,9 +8,17 @@
   height: 33px;
 }
 
+.header__line {
+  border-bottom: 1px solid;
+  border-color: #545454;
+  opacity: 70%;
+  padding-top: 41px;
+}
+
 @media screen and (max-width: 480px) {
   .header {
     max-width: 282px;
+    margin: auto;
   }
 
   .header__logo {
