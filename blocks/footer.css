@@ -1,5 +1,5 @@
 .footer {
-  width: 318px;
+  max-width: 318px;
   padding: 67px 562px 60px 0;
 }
 
@@ -9,14 +9,26 @@
   font-size: 18px;
   line-height: 21.78px;
   color: #545454;
+  margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    display: flex;
+    padding: 67px 262px 60px 0;
+    align-self: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .footer {
-    width: 282px;
+    max-width: 282px;
     display: flex;
     align-self: center;
     padding: 48px 0 36px 0;
+  }
+
+  .footer__copyright {
     font-size: 14px;
     line-height: 16.94px;
   }
