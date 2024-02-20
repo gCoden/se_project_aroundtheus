@@ -1,8 +1,7 @@
 .header {
   margin: 54px 0 40px 0;
   border-bottom: 1px solid;
-  color: #545454;
-  border-color: rgba(54, 54, 54, 0.7);
+  border-color: rgba(84, 84, 84, 0.7);
   display: flex;
   align-self: center;
 }

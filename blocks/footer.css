@@ -20,7 +20,6 @@
 
 @media screen and (max-width: 920px) {
   .footer {
-    padding: 67px 0px 60px 0;
     grid-template-columns: minmax(auto, 581px) auto;
     justify-content: center;
   }
@@ -43,6 +42,5 @@
   .footer {
     grid-template-columns: minmax(auto, 282px) auto;
     justify-content: center;
-    padding: 48px 0 36px 0;
   }
 }
