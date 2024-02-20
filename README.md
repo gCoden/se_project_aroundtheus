@@ -23,6 +23,6 @@ Good luck and have fun!
 **Project 3**
 
 This is Project 3 in the program. It covers grid layout, responsive design and other aspects of creating an adative web design. Using just VScode, Google, Git bash and an open browser a lot has been acomplished.
-- [Link to video breakdown of Project 3](https://vimeo.com/914539144/de5e2387ff?share=copy)
+- [Link to video breakdown of Project 3](https://vimeo.com/914539144?share=copy)
 - [Link to Project 3 website](https://gcoden.github.io/se_project_aroundtheus/)
 
