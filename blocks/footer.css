@@ -35,9 +35,3 @@
     line-height: 16.94px;
   }
 }
-
-@media screen and (max-width: 480px) {
-  .footer {
-    grid-template-columns: minmax(auto, 282px) auto;
-  }
-}
