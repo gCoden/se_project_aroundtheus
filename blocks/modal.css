@@ -53,18 +53,7 @@
   margin-bottom: 54px;
 }
 
-.modal__input_title {
-  border: none;
-  border-bottom: 1px solid;
-  border-color: rgba(0, 0, 0, 0.2);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.94px;
-  height: 27px;
-}
-
-.modal__input_description {
+input[type="text"] {
   border: none;
   border-bottom: 1px solid;
   border-color: rgba(0, 0, 0, 0.2);
