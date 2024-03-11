@@ -6,8 +6,9 @@
   bottom: 0;
   right: 0;
   left: 0;
-  display: flex;
+  /* display: flex; */
   padding: 0 19px;
+  display: none;
 }
 
 .modal__opened {
@@ -36,6 +37,10 @@
   top: -40px;
   right: -40px;
   cursor: pointer;
+}
+
+.modal__closed {
+  display: none;
 }
 
 .modal__form {
