@@ -39,22 +39,28 @@
     </div>
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-edit-close-button"></button>
-        <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form">
+        <button
+          class="modal__close"
+          id="profile-edit-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">Edit Profile</h2>
+        <form name="modal-form" class="modal__form">
           <input
             type="text"
             name="title"
             id="profile-title-input"
             placeholder="Name"
+            class="modal__input"
           />
           <input
             type="text"
             name="description"
             id="profile-description-input"
             placeholder="Description"
+            class="modal__input"
           />
-          <button class="modal__button">Save</button>
+          <button class="modal__button" type="button">Save</button>
         </form>
       </div>
     </div>
