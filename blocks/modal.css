@@ -11,13 +11,12 @@
   margin: auto 0;
 }
 
-.modal__action_open {
+.modal__opened {
   display: flex;
 }
 
 .modal__container {
   max-width: 430px;
-  max-height: 330px;
   position: relative;
   color: black;
   background-color: white;
