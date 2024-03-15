@@ -11,10 +11,6 @@
   margin: auto 0;
 }
 
-.modal__opened {
-  display: flex;
-}
-
 .modal__container {
   max-width: 430px;
   position: relative;
@@ -23,6 +19,10 @@
   padding: 36px;
   margin: auto;
   border-radius: 10px;
+}
+
+.modal_opened {
+  display: flex;
 }
 
 .modal__close {
@@ -86,7 +86,6 @@
 .modal__button:hover {
   opacity: 80%;
 }
-
 @media screen and (max-width: 620px) {
   .modal__container {
     padding: 25px 22px;
