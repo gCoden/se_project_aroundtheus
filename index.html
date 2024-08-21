@@ -27,7 +27,11 @@
             ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button
+            class="profile__add-button"
+            type="button"
+            id="profile-add-button"
+          ></button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list"></ul>
@@ -64,12 +68,43 @@
         </form>
       </div>
     </div>
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="profile-edit-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">New Place</h2>
+        <form name="modal-form" class="modal__form" id="add-card-form">
+          <input
+            type="text"
+            name="title"
+            id="profile-title-input"
+            placeholder="Title"
+            class="modal__input modal__input_type_title"
+          />
+          <input
+            type="text"
+            name="url"
+            id="profile-description-input"
+            placeholder="Image URL"
+            class="modal__input modal__input_type_url"
+          />
+          <button class="modal__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
     <template id="card-template">
       <li class="card">
         <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__title"></h2>
-          <button class="card__like-button" type="button"></button>
+          <button
+            class="card__like-button"
+            type="button"
+            id="like-buttons"
+          ></button>
         </div>
       </li>
     </template>
