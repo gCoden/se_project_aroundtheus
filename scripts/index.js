@@ -52,6 +52,15 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const trashCardButton = cardElement.querySelector(".card__delete-button");
+  const previewImageModal = document.querySelector("#preview-image-modal");
+  const previewImageCloseButton = previewImageModal.querySelector(
+    "#preview-image-close-button"
+  );
+
+  cardImageEl.addEventListener("click", () => openModal(previewImageModal));
+  previewImageCloseButton.addEventListener("click", () =>
+    closePopup(previewImageModal)
+  );
 
   trashCardButton.addEventListener("click", () => {
     cardElement.remove();
