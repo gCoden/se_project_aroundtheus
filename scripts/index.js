@@ -57,7 +57,9 @@ function getCardElement(cardData) {
     "#preview-image-close-button"
   );
 
-  cardImageEl.addEventListener("click", () => openModal(previewImageModal));
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewImageModal);
+  });
   previewImageCloseButton.addEventListener("click", () =>
     closePopup(previewImageModal)
   );
