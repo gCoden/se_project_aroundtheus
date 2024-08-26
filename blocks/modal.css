@@ -9,6 +9,7 @@
   padding: 0 19px;
   display: none;
   margin: auto 0;
+  animation: close 0.5s;
 }
 
 .modal__container {
@@ -25,10 +26,12 @@
   max-width: 75vw;
   max-height: 75vh;
   padding: 0;
+  display: flex;
 }
 
 .modal_opened {
   display: flex;
+  animation: open 0.5s;
 }
 
 .modal__close {
@@ -64,6 +67,18 @@
   margin-bottom: 54px;
 }
 
+.modal__caption {
+  position: absolute;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  bottom: -20px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
 .modal__input {
   border: none;
   border-bottom: 1px solid;
@@ -97,6 +112,10 @@
     padding: 25px 22px;
   }
 
+  .modal__container_type_preview {
+    padding: 0;
+  }
+
   .modal__form {
     width: 238px;
   }
@@ -117,7 +136,14 @@
   .modal__close {
     width: 26px;
     height: 26px;
-    right: 0;
+    right: 17px;
+  }
+
+  .modal__close_type_preview {
+    width: 30px;
+    height: 30px;
+    top: -30px;
+    right: -30px;
   }
 
   .modal__input {
