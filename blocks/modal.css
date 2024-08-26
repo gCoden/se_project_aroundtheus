@@ -21,6 +21,12 @@
   border-radius: 10px;
 }
 
+.modal__container_type_preview {
+  max-width: 75vw;
+  max-height: 75vh;
+  padding: 0;
+}
+
 .modal_opened {
   display: flex;
 }

@@ -46,23 +46,26 @@ const cardTemplate =
 const cardTitleInput = addCardForm.querySelector(".modal__input_type_title");
 const cardUrlInput = addCardForm.querySelector(".modal__input_type_url");
 
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImageCloseButton = previewImageModal.querySelector(
+  "#preview-image-close-button"
+);
+const modalImageElement = previewImageModal.querySelector(".modal__image");
+const modalHeadingElement = previewImageModal.querySelector(".modal__caption");
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const trashCardButton = cardElement.querySelector(".card__delete-button");
-  const previewImageModal = document.querySelector("#preview-image-modal");
-  const previewImageCloseButton = previewImageModal.querySelector(
-    "#preview-image-close-button"
-  );
 
   cardImageEl.addEventListener("click", () => {
+    modalImageElement.src = cardData.link;
+    modalImageElement.alt = cardData.name;
+    modalHeadingElement.textContent = cardData.name;
     openModal(previewImageModal);
   });
-  previewImageCloseButton.addEventListener("click", () =>
-    closePopup(previewImageModal)
-  );
 
   trashCardButton.addEventListener("click", () => {
     cardElement.remove();
@@ -105,6 +108,10 @@ function closePopup(modal) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
+
+previewImageCloseButton.addEventListener("click", () =>
+  closePopup(previewImageModal)
+);
 
 profileEditButton.addEventListener("click", () => {
   profileTitleinput.value = profileTitle.textContent;
