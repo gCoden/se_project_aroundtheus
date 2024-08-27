@@ -94,6 +94,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  e.target.reset();
 }
 
 function renderCard(cardData, wrapper) {
