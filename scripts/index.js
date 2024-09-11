@@ -110,6 +110,25 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
+function handleCloseOverlay(evt) {
+  if (evt.target.classList.contains("modal_opened")) {
+    const modalCloseOverlay = document.querySelector(".modal_opened");
+    closePopup(modalCloseOverlay);
+  }
+}
+
+function handleEscModal(evt) {
+  if (evt.key === "Escape") {
+    const modalOpened = document.querySelector(".modal_opened");
+    if (modalOpened) {
+      closePopup(modalOpened);
+    }
+  }
+}
+
+document.addEventListener("keydown", handleEscModal);
+document.addEventListener("click", handleCloseOverlay);
+
 previewImageCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
 );
