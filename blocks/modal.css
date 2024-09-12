@@ -114,6 +114,7 @@
   cursor: not-allowed;
   background-color: rgba(255, 255, 255, 0.6);
 }
+
 @media screen and (max-width: 620px) {
   .modal__container {
     padding: 25px 22px;
