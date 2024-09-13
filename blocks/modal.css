@@ -115,6 +115,15 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.modal__error_visible {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: red;
+}
+
 @media screen and (max-width: 620px) {
   .modal__container {
     padding: 25px 22px;
