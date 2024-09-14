@@ -90,6 +90,11 @@
   height: 26px;
 }
 
+.modal__input_type_error {
+  border: 1px 0px 0px 0px;
+  border-color: red;
+}
+
 .modal__button {
   color: white;
   background-color: black;
