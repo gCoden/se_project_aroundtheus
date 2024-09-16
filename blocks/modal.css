@@ -58,6 +58,13 @@
   gap: 29px;
 }
 
+.modal__form-label {
+  position: relative;
+}
+.modal__error {
+  position: absolute;
+}
+
 .modal__heading {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 900;
