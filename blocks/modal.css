@@ -88,6 +88,8 @@
   font-size: 14px;
   line-height: 16.94px;
   height: 26px;
+  display: block;
+  width: 100%;
 }
 
 .modal__input_type_error {
@@ -107,6 +109,8 @@
   line-height: 21.78px;
   border: none;
   border-radius: 2px;
+  display: block;
+  width: 100%;
 }
 
 .modal__button:hover {

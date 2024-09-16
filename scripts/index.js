@@ -104,16 +104,19 @@ function renderCard(cardData, wrapper) {
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.addEventListener("keydown", handleEscModal);
+  document.addEventListener("click", handleCloseOverlay);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscModal);
+  document.addEventListener("click", handleCloseOverlay);
 }
 
 function handleCloseOverlay(evt) {
   if (evt.target.classList.contains("modal_opened")) {
-    const modalCloseOverlay = document.querySelector(".modal_opened");
-    closePopup(modalCloseOverlay);
+    closePopup(evt.target);
   }
 }
 
@@ -125,9 +128,6 @@ function handleEscModal(evt) {
     }
   }
 }
-
-document.addEventListener("keydown", handleEscModal);
-document.addEventListener("click", handleCloseOverlay);
 
 previewImageCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
