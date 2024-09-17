@@ -104,8 +104,6 @@ function renderCard(cardData, wrapper) {
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  document.addEventListener("keydown", handleEscModal);
-  document.addEventListener("click", handleCloseOverlay);
 }
 
 function openModal(modal) {
