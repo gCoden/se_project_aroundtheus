@@ -1,15 +1,17 @@
 class Card {
-  constructor(cardData, cardSelector) {
+  constructor(cardData, cardSelector, handlePreviewImage) {
     this._name = cardData.name;
     this._link = cardData.link;
-
+    this._handlePreviewImage = handlePreviewImage;
     this._cardSelector = cardSelector;
   }
 
   _setEventListeners() {
     this._element
       .querySelector(".card__image")
-      .addEventListener("click", () => this._handlePreviewImage());
+      .addEventListener("click", () =>
+        this._handlePreviewImage(this._name, this._link)
+      );
 
     this._element
       .querySelector(".card__delete-button")
@@ -18,13 +20,6 @@ class Card {
     this._element
       .querySelector(".card__like-button")
       .addEventListener("click", () => this._handleLikeIcon());
-  }
-
-  _handlePreviewImage() {
-    this._element.src = this._link;
-    this._element.alt = this._name;
-    this._element.textContent = this._name;
-    openModal(previewImageModal);
   }
 
   _handleDeleteCard() {

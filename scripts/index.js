@@ -79,32 +79,39 @@ const addFormValidator = new FormValidator(validationSettings, addCardForm);
 // editFormValidator.enableValidation();
 // addFormValidator.enableValidation();
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  const trashCardButton = cardElement.querySelector(".card__delete-button");
+// function getCardElement(cardData) {
+//   const cardElement = cardTemplate.cloneNode(true);
+//   const cardImageEl = cardElement.querySelector(".card__image");
+//   const cardTitleEl = cardElement.querySelector(".card__title");
+//   const likeButton = cardElement.querySelector(".card__like-button");
+//   const trashCardButton = cardElement.querySelector(".card__delete-button");
 
-  cardImageEl.addEventListener("click", () => {
-    modalImageElement.src = cardData.link;
-    modalImageElement.alt = cardData.name;
-    modalHeadingElement.textContent = cardData.name;
-    openModal(previewImageModal);
-  });
+// cardImageEl.addEventListener("click", () => {
+//   modalImageElement.src = cardData.link;
+//   modalImageElement.alt = cardData.name;
+//   modalHeadingElement.textContent = cardData.name;
+//   openModal(previewImageModal);
+// });
 
-  trashCardButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
+//   trashCardButton.addEventListener("click", () => {
+//     cardElement.remove();
+//   });
 
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardTitleEl.textContent = cardData.name;
+//   likeButton.addEventListener("click", () => {
+//     likeButton.classList.toggle("card__like-button_active");
+//   });
+//   cardImageEl.src = cardData.link;
+//   cardImageEl.alt = cardData.name;
+//   cardTitleEl.textContent = cardData.name;
 
-  return cardElement;
+//   return cardElement;
+// }
+
+function handlePreviewImage(name, link) {
+  modalImageElement.src = cardData.link;
+  modalImageElement.alt = cardData.name;
+  modalHeadingElement.textContent = cardData.name;
+  openModal(previewImageModal);
 }
 
 function handleProfileEditSubmit(e) {
