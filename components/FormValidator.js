@@ -1,3 +1,6 @@
+import { profileEditForm } from "../scripts/index.js";
+import { addCardForm } from "../scripts/index.js";
+
 class FormValidator {
   constructor(settings, formEl) {
     this._inputSelector = settings.inputSelector;
@@ -82,9 +85,9 @@ const settings = {
   errorClass: "modal__error_visible",
 };
 
-// const editFormValidator = new FormValidator(settings, profileEditForm);
-// editFormValidator.enableValidation();
-// const addFormValidator = new FormValidator(settings, addCardForm);
-// addFormValidator.enableValidation();
+const editFormValidator = new FormValidator(settings, profileEditForm);
+editFormValidator.enableValidation();
+const addFormValidator = new FormValidator(settings, addCardForm);
+addFormValidator.enableValidation();
 
 export default FormValidator;

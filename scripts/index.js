@@ -47,8 +47,8 @@ const profileTitleinput = document.querySelector("#profile-title-input");
 const profileDescriptioninput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
-const addCardForm = addCardModal.querySelector(".modal__form");
+export const profileEditForm = profileEditModal.querySelector(".modal__form");
+export const addCardForm = addCardModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
@@ -76,8 +76,8 @@ const editFormValidator = new FormValidator(
 );
 const addFormValidator = new FormValidator(validationSettings, addCardForm);
 
-// editFormValidator.enableValidation();
-// addFormValidator.enableValidation();
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 // function getCardElement(cardData) {
 //   const cardElement = cardTemplate.cloneNode(true);
@@ -131,7 +131,7 @@ function handleAddCardFormSubmit(e) {
 }
 
 function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, cardSelector);
+  const card = new Card(cardData, cardSelector, handlePreviewImage);
   wrapper.prepend(card.getView());
 }
 
