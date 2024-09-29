@@ -1,6 +1,3 @@
-import { profileEditForm } from "../scripts/index.js";
-import { addCardForm } from "../scripts/index.js";
-
 class FormValidator {
   constructor(settings, formEl) {
     this._inputSelector = settings.inputSelector;
@@ -19,7 +16,7 @@ class FormValidator {
     this._errorMessageEl.classList.add(this._errorClass);
   }
 
-  hideInputError(inputEl) {
+  _hideInputError(inputEl) {
     this._errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(this._inputErrorClass);
     this._errorMessageEl.textContent = "";
@@ -38,10 +35,10 @@ class FormValidator {
 
   _toggleButtonState(inputEls, settings, submitButton) {
     if (hasInvalidInput(inputEls)) {
-      _enableButton(submitButton, settings);
+      this._enableButton(submitButton, settings);
       return;
     }
-    _disableButton(submitButton, settings);
+    this._disableButton(submitButton, settings);
   }
 
   _hasInvalidInput(inputList) {
@@ -50,20 +47,20 @@ class FormValidator {
 
   _checkInputValidity(formEl, inputEl, settings) {
     if (!inputEl.validity.valid) {
-      return _showInpuError(formEl, inputEl, settings);
+      return this._showInputError(formEl, inputEl, settings);
     }
-    _hideInputError(formEl, inputEl, settings);
+    this._hideInputError(formEl, inputEl, settings);
   }
 
-  _setEventListeners(inputEls, settings, submitButton) {
+  _setEventListeners(formEl, inputEls, settings, submitButton) {
     this._inputEls = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
     this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
     inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        checkInputValidity(formEl, inputEl, settings);
-        toggleButtonState(inputEls, settings, submitButton);
+        this._checkInputValidity(formEl, inputEl, settings);
+        this._toggleButtonState(inputEls, settings, submitButton);
       });
     });
   }
@@ -72,22 +69,8 @@ class FormValidator {
     this._formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    setEventListeners(formEl, settings);
+    this._setEventListeners(formEl, settings);
   }
 }
-
-const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
-
-const editFormValidator = new FormValidator(settings, profileEditForm);
-editFormValidator.enableValidation();
-const addFormValidator = new FormValidator(settings, addCardForm);
-addFormValidator.enableValidation();
 
 export default FormValidator;
