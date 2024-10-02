@@ -45,21 +45,21 @@ class FormValidator {
     return !inputList.every((inputEl) => inputEl.validity.valid);
   }
 
-  _checkInputValidity(formEl, inputEl, settings) {
+  _checkInputValidity(inputEl) {
     if (!inputEl.validity.valid) {
-      return this._showInputError(formEl, inputEl, settings);
+      return this._showInputError(inputEl);
     }
     this._hideInputError(inputEl);
   }
 
-  _setEventListeners(formEl, settings) {
+  _setEventListeners(settings) {
     this._inputEls = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
     this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        this._checkInputValidity(formEl, inputEl, settings);
+        this._checkInputValidity(this._formEl, inputEl, settings);
         this._toggleButtonState(this._inputEls, settings, this._submitButton);
       });
     });
