@@ -59,7 +59,7 @@ class FormValidator {
     this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        this._checkInputValidity(this._formEl, inputEl, settings);
+        this._checkInputValidity(inputEl);
         this._toggleButtonState(this._inputEls, settings, this._submitButton);
       });
     });
