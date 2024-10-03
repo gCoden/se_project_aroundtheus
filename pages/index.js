@@ -70,15 +70,6 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
-
 const editFormValidator = new FormValidator(
   validationSettings,
   profileEditForm
@@ -91,7 +82,7 @@ addFormValidator.enableValidation();
 function handlePreviewImage(name, link) {
   modalImageElement.src = link;
   modalImageElement.alt = name;
-  modalHeadingElement.textContent = cardData.name;
+  modalHeadingElement.textContent = name;
   openModal(previewImageModal);
 }
 
@@ -111,9 +102,14 @@ function handleAddCardFormSubmit(e) {
   e.target.reset();
 }
 
+function createCard(item) {
+  const card = new Card(item, cardSelector, handlePreviewImage);
+  return card.getView();
+}
+
 function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, cardSelector, handlePreviewImage);
-  wrapper.prepend(card.getView());
+  const card = createCard(cardData);
+  wrapper.prepend(card);
 }
 
 function closePopup(modal) {
