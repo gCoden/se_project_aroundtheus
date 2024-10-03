@@ -65,11 +65,11 @@ class FormValidator {
     });
   }
 
-  enableValidation(formEl, settings) {
+  enableValidation() {
     this._formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    this._setEventListeners(formEl, settings);
+    this._setEventListeners(this._formEl, this._settings);
   }
 }
 
