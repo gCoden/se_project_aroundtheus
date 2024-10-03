@@ -23,14 +23,14 @@ class FormValidator {
     this._errorMessageEl.classList.remove(this._errorClass);
   }
 
-  _enableButton(submitButton) {
-    submitButton.classList.add(this._inactiveButtonClass);
-    submitButton.disabled = true;
+  _enableButton() {
+    this._submitButton.classList.add(this._inactiveButtonClass);
+    this._submitButton.disabled = true;
   }
 
-  _disableButton(submitButton) {
-    submitButton.classList.remove(this._inactiveButtonClass);
-    submitButton.disabled = false;
+  _disableButton() {
+    this._submitButton.classList.remove(this._inactiveButtonClass);
+    this._submitButton.disabled = false;
   }
 
   _toggleButtonState(inputEls, settings, submitButton) {
