@@ -1,6 +1,7 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "./index.css";
+import Section from "../components/Section.js";
 
 const initialCards = [
   {
@@ -70,6 +71,9 @@ const validationSettings = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
+
+const newCardPopup = new PopupWithForm("#add-card-modal", () => {});
+const cardSection = new Section();
 
 const editFormValidator = new FormValidator(
   validationSettings,
