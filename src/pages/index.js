@@ -77,8 +77,8 @@ const newCardPopup = new PopupWithForm("#add-card-modal", () => {});
 const cardSection = new Section(
   {
     renderer: (item) => {
-      const cardEl = new Card(item);
-      cardSection.addItems(cardEl.getView());
+      const cardEl = createCard(item);
+      cardSection.addItems(cardEl);
     },
   },
   "cards__list"
