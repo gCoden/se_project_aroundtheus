@@ -74,7 +74,17 @@ const validationSettings = {
 };
 
 const newCardPopup = new PopupWithForm("#add-card-modal", () => {});
-const cardSection = new Section();
+const cardSection = new Section(
+  {
+    renderer: (item) => {
+      const cardEl = new Card(item);
+      cardSection.addItems(cardEl.getView());
+    },
+  },
+  "cards__list"
+);
+
+cardSection.renderItems(initialCards);
 
 const editFormValidator = new FormValidator(
   validationSettings,
