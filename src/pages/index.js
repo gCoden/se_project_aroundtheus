@@ -3,6 +3,8 @@ import Card from "../components/Card.js";
 import "./index.css";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
 const initialCards = [
   {
@@ -73,7 +75,21 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const newCardPopup = new PopupWithForm("#add-card-modal", () => {});
+const userInfo = new UserInfo(".profile__title", "profile__description");
+
+userInfo.setEventListeners();
+
+const newCardPopup = new PopupWithForm(
+  { popUpSelector: "#add-card-modal" },
+  handleAddCardFormSubmit
+);
+
+newCardPopup.setEventListeners();
+
+const imagePopup = new PopupWithImage(".modal__image");
+
+imagePopup.setEventListeners();
+
 const cardSection = new Section(
   {
     renderer: (item) => {
