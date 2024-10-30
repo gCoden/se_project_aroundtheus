@@ -77,16 +77,14 @@ const validationSettings = {
 
 const userInfo = new UserInfo(".profile__title", "profile__description");
 
-userInfo.setEventListeners();
-
 const newCardPopup = new PopupWithForm(
-  { popUpSelector: "#add-card-modal" },
+  { popUpSelector: ".modal__form" },
   handleAddCardFormSubmit
 );
 
 newCardPopup.setEventListeners();
 
-const imagePopup = new PopupWithImage(".modal__image");
+const imagePopup = new PopupWithImage({ popupSelector: ".modal__image" });
 
 imagePopup.setEventListeners();
 
