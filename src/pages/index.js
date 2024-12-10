@@ -78,7 +78,7 @@ const validationSettings = {
 const userInfo = new UserInfo(".profile__title", "profile__description");
 
 const newCardPopup = new PopupWithForm(
-  { popUpSelector: ".modal__form" },
+  { popUpSelector: "#add-card-modal" },
   handleAddCardFormSubmit
 );
 
