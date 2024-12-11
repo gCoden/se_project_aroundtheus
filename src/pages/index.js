@@ -78,7 +78,7 @@ const validationSettings = {
 const userInfo = new UserInfo(".profile__title", "profile__description");
 
 const newCardPopup = new PopupWithForm(
-  { popUpSelector: "#add-card-modal" },
+  { popupSelector: "#add-card-modal" },
   handleAddCardFormSubmit
 );
 
@@ -98,7 +98,7 @@ const cardSection = new Section(
   "cards__list"
 );
 
-cardSection.renderItems(initialCards);
+// cardSection.renderItems(initialCards);
 
 const editFormValidator = new FormValidator(
   validationSettings,
