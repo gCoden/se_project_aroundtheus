@@ -55,8 +55,6 @@ const profileDescriptioninput = document.querySelector(
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
 
 const cardTitleInput = addCardForm.querySelector(".modal__input_type_title");
 const cardUrlInput = addCardForm.querySelector(".modal__input_type_url");
@@ -97,8 +95,6 @@ const cardSection = new Section(
   },
   "cards__list"
 );
-
-// cardSection.renderItems(initialCards);
 
 const editFormValidator = new FormValidator(
   validationSettings,
