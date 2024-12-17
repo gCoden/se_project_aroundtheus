@@ -139,32 +139,10 @@ function renderCard(cardData, wrapper) {
   wrapper.prepend(card);
 }
 
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscModal);
-  document.removeEventListener("click", handleCloseOverlay);
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscModal);
-  document.addEventListener("click", handleCloseOverlay);
-}
-
-function handleCloseOverlay(evt) {
-  if (evt.target.classList.contains("modal_opened")) {
-    closePopup(evt.target);
-  }
-}
-
-function handleEscModal(evt) {
-  if (evt.key === "Escape") {
-    const modalOpened = document.querySelector(".modal_opened");
-    if (modalOpened) {
-      closePopup(modalOpened);
-    }
-  }
-}
+newCardPopup.open();
+imagePopup.open();
+newCardPopup.close();
+imagePopup.close();
 
 previewImageCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
