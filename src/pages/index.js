@@ -106,10 +106,7 @@ editFormValidator.enableValidation();
 addFormValidator.enableValidation();
 
 function handlePreviewImage(name, link) {
-  modalImageElement.src = link;
-  modalImageElement.alt = name;
-  modalHeadingElement.textContent = name;
-  openModal(previewImageModal);
+  imagePopup.open({ name, link });
 }
 
 function handleProfileEditSubmit(e) {
@@ -138,11 +135,6 @@ function renderCard(cardData, wrapper) {
   const card = createCard(cardData);
   wrapper.prepend(card);
 }
-
-newCardPopup.open();
-imagePopup.open();
-newCardPopup.close();
-imagePopup.close();
 
 previewImageCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
