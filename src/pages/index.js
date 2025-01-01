@@ -113,7 +113,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleinput.value;
   profileDescription.textContent = profileDescriptioninput.value;
-  closePopup(profileEditModal);
+  imagePopup.close();
 }
 
 function handleAddCardFormSubmit(e) {
@@ -143,20 +143,16 @@ previewImageCloseButton.addEventListener("click", () =>
 profileEditButton.addEventListener("click", () => {
   profileTitleinput.value = profileTitle.textContent;
   profileDescriptioninput.value = profileDescription.textContent;
-  openModal(profileEditModal);
+  newCardPopup.open();
 });
 
-profileEditCloseButton.addEventListener("click", () =>
-  closePopup(profileEditModal)
-);
+profileEditCloseButton.addEventListener("click", () => newCardPopup.close());
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
+addNewCardButton.addEventListener("click", () => newCardPopup.open());
 
-addCardModalCloseButton.addEventListener("click", () =>
-  closePopup(addCardModal)
-);
+addCardModalCloseButton.addEventListener("click", () => newCardPopup.close());
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
