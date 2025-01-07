@@ -143,7 +143,7 @@ previewImageCloseButton.addEventListener("click", () =>
 profileEditButton.addEventListener("click", () => {
   profileTitleinput.value = profileTitle.textContent;
   profileDescriptioninput.value = profileDescription.textContent;
-  newCardPopup.open();
+  profileEditForm.open();
 });
 
 profileEditCloseButton.addEventListener("click", () => newCardPopup.close());

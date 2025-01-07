@@ -4,10 +4,10 @@ export default class Popup {
     this._handleEscUp = this._handleEscUp.bind(this);
   }
   open() {
-    this._popupElement.classList.add(".modal_opened");
+    this._popupElement.classList.add("modal_opened");
   }
   close() {
-    this._popupElement.classList.remove(".modal_opened");
+    this._popupElement.classList.remove("modal_opened");
     document.removeEventListener("keyup", this._handleEscUp);
   }
   _handleEscUp(evt) {
